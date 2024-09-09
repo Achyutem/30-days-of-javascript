@@ -1,6 +1,5 @@
 /* https://leetcode.com/problems/apply-transform-over-each-element-in-array */
 
-
 const map = (arr, fn) => {
 result = []
 
