@@ -1,8 +1,7 @@
-/* https://leetcode.com/problems/create-hello-world-function/?envType=study-plan-v2&envId=30-days-of-javascript */
+/* https://leetcode.com/problems/create-hello-world-function */
 
 const createHelloWorld = () => {
-    
-    return function() {
+    return function(): string {
         return 'Hello World'
-    }
+    };
 };

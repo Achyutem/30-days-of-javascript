@@ -1,20 +1,27 @@
 /* https://leetcode.com/problems/counter-ii */
 
 
-const createCounter = (init) => {
-    count = init
+type Counter = {
+    increment: () => number,
+    decrement: () => number,
+    reset: () => number,
+}
+
+const createCounter = (init: number): Counter => {
+    let val = init
     return{
         increment: () => {
-            count++ 
-            return count
+            val++
+            return val
         },
-        decrement: () => {
-            count --
-            return count
+        decrement : () => {
+            val--
+            return val
         },
-        reset: () => {
-            count = init
-            return count
+        reset : () => {
+            val = init
+            return val
         }
     }
+    
 };
