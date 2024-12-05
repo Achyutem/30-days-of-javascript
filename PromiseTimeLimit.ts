@@ -1,0 +1,21 @@
+type Fn = (...args: any[]) => Promise<any>;
+
+function timeLimit(fn: Fn, t: number): Fn {
+    return async function (...args: any[]) {
+        return new Promise((resolve, reject) => {
+            const timer = setInterval(() => {
+                reject('Time Limit Exceeded')
+            }, t)
+
+            fn(...args)
+                .then((result) => {
+                    clearTimeout(timer);
+                    resolve(result)
+                })
+                .catch((err) => {
+                    clearTimeout(timer);
+                    reject(err)
+                })
+        })
+    }
+}
